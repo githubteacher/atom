@@ -89,7 +89,10 @@ TextEditorComponent = React.createClass
 
       style.height = scrollViewHeight if @autoHeight
 
-    className = 'editor-contents'
+    if useShadowDOM
+      className = 'editor-contents--private'
+    else
+      className = 'editor-contents'
     className += ' is-focused' if focused
     className += ' has-selection' if hasSelection
 
